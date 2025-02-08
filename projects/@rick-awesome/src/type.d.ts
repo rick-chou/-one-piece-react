@@ -1,6 +1,8 @@
 declare module 'flipdown';
 
 declare module '*.js';
+declare module '*.cjs';
+declare module '*.mjs';
 
 declare module '*.vue' {
   import { type defineComponent } from 'vue';

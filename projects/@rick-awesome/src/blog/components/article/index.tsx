@@ -1,4 +1,3 @@
-import { codeFontFamily } from '@/theme';
 import { css } from '@emotion/react';
 import { MDXProvider } from '@mdx-js/react';
 import { Image } from 'antd';
@@ -23,7 +22,7 @@ const Article: FC<PropsWithChildren<{ classname?: string }>> = ({
   const codeStyle = useCodeStyle();
   return (
     <div
-      className={`px-8 pb-8 prose prose-slate overflow-auto max-w-[45vw] dark:prose-invert !select-text no-scrollbar ${classname}`}>
+      className={`prose prose-slate dark:prose-invert no-scrollbar max-w-[45vw] overflow-auto px-8 pb-8 select-text! ${classname}`}>
       <MDXProvider
         components={{
           a: props => <a target="_blank" {...props} className="italic"></a>,
@@ -42,8 +41,10 @@ const Article: FC<PropsWithChildren<{ classname?: string }>> = ({
                   </figcaption>
                   <pre
                     {...props}
-                    className="!bg-[#002b36]"
-                    css={css({ code: { fontFamily: codeFontFamily } })}></pre>
+                    className="bg-[#002b36]!"
+                    css={css({
+                      code: { fontFamily: `var(--code-font)` },
+                    })}></pre>
                 </figure>
               </div>
             );

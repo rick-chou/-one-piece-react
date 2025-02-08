@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { CommandItemTypes } from '.';
+import { type CommandItemTypes } from '.';
 
 export const CommandModalContainer = css({
   paddingTop: '1rem',

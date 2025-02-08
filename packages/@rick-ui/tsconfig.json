@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "types": ["../../type.def.d.ts"],
+    "jsxImportSource": "@emotion/react",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"],
+      "@root/*": ["./*"],
+      "@rickzhou/react-ui": ["src"],
+      "@rickzhou/react-ui/*": ["src/*", "*"]
+    }
+  },
+  "include": [".dumirc.ts", "src/**/*"]
+}

@@ -36,6 +36,6 @@
       "@rickzhou/awesome/*": ["./projects/@rick-awesome/src/*"]
     }
   },
-  "include": ["packages", "projects"],
+  "include": ["packages", "projects", ".github/workflows/App.tsx"],
   "exclude": ["roadmap"]
 }

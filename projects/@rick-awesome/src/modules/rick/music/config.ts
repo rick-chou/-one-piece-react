@@ -4,9 +4,9 @@ import {
   在雨中,
   没有理想的人不伤心,
   爱在夏天,
-} from '@/assets/music';
-import { Cover1, Cover2, Cover3 } from '@/assets/pic';
-import { random } from 'lodash';
+} from '@rickzhou/awesome/assets/music';
+import { Cover1, Cover2, Cover3 } from '@rickzhou/awesome/assets/pic';
+import { random } from 'lodash-es';
 
 const cover = [Cover1, Cover2, Cover3];
 

@@ -22,7 +22,11 @@ const EditorContextMenu = () => {
     <div>
       <Menu id={EditorCtxMenu} theme="dark">
         <CtxMenu hotkey={RickHotKey.format} title="Format" onClick={() => {}} />
-        <CtxMenu hotkey={RickHotKey.cmd} title="Command Palette..." onClick={toggleCommandModal} />
+        <CtxMenu
+          hotkey={RickHotKey.cmd}
+          title="Command Palette..."
+          onClick={toggleCommandModal}
+        />
       </Menu>
     </div>
   );

@@ -1,11 +1,11 @@
 /* eslint-disable guard-for-in */
 
-import { mainHeaderStyle } from '@/blog/layout/style';
-import { capitalize, first, pick, startCase, upperFirst } from 'lodash';
+import { mainHeaderStyle } from '@rickzhou/awesome/blog/layout/style';
+import { capitalize, first, pick, startCase, upperFirst } from 'lodash-es';
 import { useOutletContext, type RouteObject } from 'react-router-dom';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-type Component = typeof import('@/modules/demo/switch');
+type Component = typeof import('@rickzhou/awesome/modules/demo/switch');
 
 export type MetaData = {
   // full router path
@@ -45,7 +45,8 @@ const modules = import.meta.glob([
   '../modules/rick/*/index.tsx',
   '../modules/demo/*/index.tsx',
   '../modules/chart/*/index.tsx',
-  '../modules/preview/*/index.tsx',
+  '../modules/settings/*/index.tsx',
+  // '../modules/preview/*/index.tsx',
 ]);
 
 export const metaData = await genMetaData(

@@ -1,14 +1,14 @@
-import { useShortKey } from '@/hooks/useShortkey';
-import { useTheme } from '@/hooks/useTheme';
+import { useShortKey } from '@rickzhou/awesome/hooks/useShortkey';
 import { useLocation } from 'react-router-dom';
 import Content from './content';
 import Header from './header';
 import Homepage from './homepage';
 import Sidebar from './sidebar';
 import { containerStyle } from './style';
+
 const Blog = () => {
   const location = useLocation();
-  const { fontFamily } = useTheme();
+
   useShortKey();
 
   const renderContent = () => {
@@ -26,7 +26,7 @@ const Blog = () => {
   return (
     <div css={containerStyle}>
       <Sidebar />
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-1 flex-col">
         <Header />
         {renderContent()}
       </div>

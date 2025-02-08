@@ -10,14 +10,14 @@ const Repl = () => {
 
   if (loading) {
     return (
-      <Spin tip="Init Editor" className="!max-h-none">
+      <Spin tip="Init Editor" className="max-h-none!">
         <div className="h-screen" />
       </Spin>
     );
   }
 
   return (
-    <App>
+    <App className="h-screen">
       <Splitter>
         <Splitter.Panel defaultSize={SideInitWidth}>
           <Editor compiler={compiler} formatter={formatter} linter={linter} />

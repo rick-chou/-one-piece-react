@@ -12,6 +12,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Install pnpm 🧰
+        uses: pnpm/action-setup@v4
+
       - name: Push 📦
         env:
           EMAIL: 944268618@qq.com
@@ -20,13 +23,10 @@ jobs:
           REPO: github.com/rick-chou/repl.git
         run: |
 
-          yarn
+          pnpm install
+          pnpm build:repl
 
-          cd projects/@rick-repl
-
-          npm ci
-          npm run build
-          cd dist
+          cd projects/@rick-repl/dist
           cp index.html 404.html
 
           git init

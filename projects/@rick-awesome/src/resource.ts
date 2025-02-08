@@ -1,5 +1,2 @@
-// js
-import 'boxicons';
-
 // css
-import './index.scss';
+import './index.css';

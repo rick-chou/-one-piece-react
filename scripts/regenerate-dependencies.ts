@@ -15,7 +15,9 @@ async function deleteNodeModules(dir: string) {
     if (err) {
       spinner.warn(`remove ${nodeModulesPath} ${chalk.bgRedBright('failed')}`);
     } else {
-      spinner.succeed(`remove ${nodeModulesPath} ${chalk.bgGreenBright('success')}`);
+      spinner.succeed(
+        `remove ${nodeModulesPath} ${chalk.bgGreenBright('success')}`,
+      );
     }
   }
 
@@ -25,7 +27,9 @@ async function deleteNodeModules(dir: string) {
     if (err) {
       spinner.warn(`remove ${lockFilePath} ${chalk.bgRedBright('failed')}`);
     } else {
-      spinner.succeed(`remove ${lockFilePath} ${chalk.bgGreenBright('success')}`);
+      spinner.succeed(
+        `remove ${lockFilePath} ${chalk.bgGreenBright('success')}`,
+      );
     }
   }
 

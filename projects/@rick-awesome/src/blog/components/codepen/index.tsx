@@ -1,12 +1,12 @@
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@rickzhou/react-ui';
 
 const Codepen: React.FC<{ id: string }> = ({ id }) => {
-  const { mode } = useTheme();
+  const { theme } = useTheme();
   return (
     <iframe
-      className="w-full h-[500px] border-0 rounded overflow-hidden"
+      className="h-[500px] w-full overflow-hidden rounded-sm border-0"
       title="codepen"
-      src={`https://codepen.io/graphilla/embed/${id}?%2Cresult&editable=true&theme-id=${mode}`}
+      src={`https://codepen.io/graphilla/embed/${id}?%2Cresult&editable=true&theme-id=${theme}`}
       loading="lazy"
     />
   );

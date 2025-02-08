@@ -1,7 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable guard-for-in */
-/* eslint-disable @typescript-eslint/no-for-in-array */
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'lodash-es';
 import { renderMsc } from 'mscgenjs';
 import { useEffect, useRef } from 'react';
 
@@ -28,14 +25,16 @@ const SequenceChart: React.FC<{
   };
 
   useEffect(() => {
+    const elementId = id.current;
+
     if (msc) {
-      document.getElementById(id.current)!.innerHTML = '';
+      document.getElementById(elementId)!.innerHTML = '';
       renderMsc(
         msc,
         {
           additionalTemplate: 'fountainpen',
           mirrorEntitiesOnBottom: true,
-          elementId: id.current,
+          elementId,
           styleAdditions: 'backfround: red',
         },
         handleRenderMscResult,
@@ -44,7 +43,7 @@ const SequenceChart: React.FC<{
 
     return () => {
       document
-        .getElementById(id.current)
+        .getElementById(elementId)
         ?.removeEventListener('click', bindEvents);
     };
   }, [msc]);

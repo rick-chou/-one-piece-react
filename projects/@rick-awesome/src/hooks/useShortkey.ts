@@ -1,6 +1,6 @@
-import { Hotkey } from '@/config/shortcut';
-import { OpenTypeConfig } from '@/store/slice/modalOpenSlice';
-import { last, toUpper } from 'lodash';
+import { Hotkey } from '@rickzhou/awesome/config/shortcut';
+import { OpenTypeConfig } from '@rickzhou/awesome/store/slice/modalOpenSlice';
+import { last, toUpper } from 'lodash-es';
 import { useEffect } from 'react';
 import { useModalOpen } from './useModalOpen';
 

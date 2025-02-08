@@ -1,35 +1,38 @@
 {
   "name": "@rickzhou/one-piece-react",
   "private": true,
-  "type": "module",
+  "homepage": "https://rick-chou.github.io/one-piece-react/",
   "author": {
     "name": "Rick.Zhou",
     "email": "944268618@qq.com",
+    "avatar": "https://cdn.jsdelivr.net/gh/rick-chou/rick-assets/png/2.png",
     "github": "https://github.com/rick-chou",
-    "juejin": "https://juejin.cn/user/1574156383563496",
-    "avatar": "https://cdn.jsdelivr.net/gh/rick-chou/rick-assets/png/2.png"
+    "juejin": "https://juejin.cn/user/1574156383563496"
   },
-  "homepage": "https://rick-chou.github.io/one-piece-react/",
+  "type": "module",
   "scripts": {
+    "prebuild": "pnpm export:vscode-configs",
+    "build:blog": "pnpm --filter '@rickzhou/blog' build",
+    "build:editor": "pnpm --filter '@rickzhou/react-editor' build",
+    "build:flow": "pnpm --filter '@rickzhou/react-flow' build",
+    "build:repl": "pnpm --filter '@rickzhou/react-repl' build",
+    "export:vscode-configs": "./cli ./scripts/export-vscode-configs.ts",
     "preinstall": "npx only-allow pnpm",
     "regenerate-dependencies": "./cli ./scripts/regenerate-dependencies.ts",
-    "run:ui": "pnpm --filter '@rickzhou/react-ui' dev",
     "run:blog": "pnpm --filter '@rickzhou/blog' dev",
-    "run:repl": "pnpm --filter '@rickzhou/react-repl' dev",
     "run:editor": "pnpm --filter '@rickzhou/react-editor' dev",
     "run:flow": "pnpm --filter '@rickzhou/react-flow' dev",
-    "build:blog": "pnpm --filter '@rickzhou/blog' build",
-    "build:repl": "pnpm --filter '@rickzhou/react-repl' build",
-    "build:editor": "pnpm --filter '@rickzhou/react-editor' build",
-    "build:flow": "pnpm --filter '@rickzhou/react-flow' build"
+    "run:repl": "pnpm --filter '@rickzhou/react-repl' dev",
+    "run:ui": "pnpm --filter '@rickzhou/react-ui' dev"
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
+    "@ant-design/pro-components": "^2.8.4",
     "@emotion/react": "^11.13.5",
     "@rickzhou/react-ui": "workspace:^",
     "@rickzhou/react-utils": "workspace:^",
-    "ahooks": "^3.8.1",
-    "antd": "^5.22.2",
+    "ahooks": "^3.8.4",
+    "antd": "^5.23.2",
     "await-to-js": "^3.0.0",
     "dayjs": "^1.11.13",
     "echarts": "^5.5.1",
@@ -37,19 +40,20 @@
     "lodash-es": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
     "react-router-dom": "^7.0.2",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.1.13",
     "zustand": "^5.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.10.3",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.16",
     "chalk": "^5.3.0",
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.0.0",
@@ -57,21 +61,24 @@
     "figlet": "^1.8.0",
     "globals": "^15.12.0",
     "ora": "^8.1.1",
-    "postcss": "^8.4.32",
     "prettier": "^3.4.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.69.5",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "^4.0.0",
     "tsx": "^4.19.2",
     "typescript": "^5.3.2",
     "typescript-eslint": "^8.16.0",
-    "vite": "^6.0.2",
-    "vite-plugin-pwa": "^0.21.0"
+    "vite": "^6.0.11",
+    "vite-plugin-pwa": "^0.21.0",
+    "vitest": "^3.0.5"
   },
+  "packageManager": "pnpm@9.12.3",
   "engines": {
-    "pnpm": ">=7 <8.6.0 || >8.6.1",
-    "node": ">17"
-  },
-  "packageManager": "pnpm@9.12.3"
+    "node": ">17",
+    "pnpm": ">=7 <8.6.0 || >8.6.1"
+  }
 }

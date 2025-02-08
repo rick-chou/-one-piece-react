@@ -1,5 +1,5 @@
-import Article from '@/blog/components/article';
-import Sidebar from '@/blog/content/sidebar.md';
+import Article from '@rickzhou/awesome/blog/components/article';
+import Sidebar from '@rickzhou/awesome/blog/content/sidebar.md';
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 

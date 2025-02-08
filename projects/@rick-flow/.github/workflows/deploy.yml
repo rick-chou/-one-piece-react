@@ -5,25 +5,25 @@ on:
       - main
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
-    steps:
-      # https://github.com/actions/checkout
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+  # Build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     # https://github.com/actions/checkout
+  #     - name: Checkout 🛎️
+  #       uses: actions/checkout@v3
 
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
-          cp dist/index.html dist/404.html
+  #     - name: Install and Build
+  #       run: |
+  #         npm ci
+  #         npm run build
+  #         cp dist/index.html dist/404.html
 
-      - name: Upload 📦
-        # https://github.com/JamesIves/github-pages-deploy-action
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          token: ${{ secrets.ACCESS_TOKEN }}
+  #     - name: Upload 📦
+  #       # https://github.com/JamesIves/github-pages-deploy-action
+  #       uses: JamesIves/github-pages-deploy-action@v4
+  #       with:
+  #         folder: dist
+  #         token: ${{ secrets.ACCESS_TOKEN }}
 
   Deploy:
     runs-on: ubuntu-latest

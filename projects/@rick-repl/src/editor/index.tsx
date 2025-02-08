@@ -1,13 +1,18 @@
 import { CloseOutlined, PlusOutlined } from '@ant-design/icons';
 import type { DragEndEvent } from '@dnd-kit/core';
 import { DndContext, PointerSensor, useSensor } from '@dnd-kit/core';
-import { SortableContext, arrayMove, horizontalListSortingStrategy, useSortable } from '@dnd-kit/sortable';
+import {
+  SortableContext,
+  arrayMove,
+  horizontalListSortingStrategy,
+  useSortable,
+} from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { getFileIcon } from '@rickzhou/react-repl/config/icon-theme';
 import Editor from '@rickzhou/react-repl/editor/core';
 import { useTabs } from '@rickzhou/react-repl/hooks/useTabs';
 import { defaultTabs } from '@rickzhou/react-repl/setup/defaultTabs';
 import { type ReplProps, type Tab } from '@rickzhou/react-repl/types';
+import { getFileIcon } from '@rickzhou/react-ui';
 import { Dropdown, Popconfirm, Tabs, type MenuProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 
@@ -18,9 +23,10 @@ type DraggableTabPaneProps = {
 const defaultActiveTab = 'file:///app.tsx';
 
 const DraggableTabNode = ({ className, ...props }: DraggableTabPaneProps) => {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
-    id: props['data-node-key'],
-  });
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({
+      id: props['data-node-key'],
+    });
 
   const style: React.CSSProperties = {
     ...props.style,
@@ -61,7 +67,15 @@ const EditorTabs: React.FC<ReplProps> = ({ compiler, formatter, linter }) => {
           {i.path.split('/').at(-1)}
         </span>
       ),
-      children: <Editor url={i.path} displayErrors formatter={formatter} compiler={compiler} linter={linter} />,
+      children: (
+        <Editor
+          url={i.path}
+          displayErrors
+          formatter={formatter}
+          compiler={compiler}
+          linter={linter}
+        />
+      ),
     }));
 
   const [items, setItems] = useState(() => renderTabs(tabs));
@@ -85,8 +99,12 @@ const EditorTabs: React.FC<ReplProps> = ({ compiler, formatter, linter }) => {
   };
 
   const add = (type: 'tsx' | 'css') => {
-    const customTabs = tabs.filter(i => i.path.startsWith('file:///Untitled') && i.path.endsWith(type));
-    const maxIdx = Math.max(...customTabs.map(i => Number(/\d/.exec(i?.path)?.[0])));
+    const customTabs = tabs.filter(
+      i => i.path.startsWith('file:///Untitled') && i.path.endsWith(type),
+    );
+    const maxIdx = Math.max(
+      ...customTabs.map(i => Number(/\d/.exec(i?.path)?.[0])),
+    );
     const idx = Number.isFinite(maxIdx) ? maxIdx + 1 : 1;
     const newActiveKey = `file:///Untitled${idx}.${type}`;
     updateTab(newActiveKey, 'add');
@@ -140,7 +158,9 @@ const EditorTabs: React.FC<ReplProps> = ({ compiler, formatter, linter }) => {
       activeKey={activeKey}
       renderTabBar={(tabBarProps, DefaultTabBar) => (
         <DndContext sensors={[sensor]} onDragEnd={onDragEnd}>
-          <SortableContext items={items.map(i => i.key)} strategy={horizontalListSortingStrategy}>
+          <SortableContext
+            items={items.map(i => i.key)}
+            strategy={horizontalListSortingStrategy}>
             <DefaultTabBar {...tabBarProps}>
               {node => (
                 <DraggableTabNode {...node.props} key={node.key}>

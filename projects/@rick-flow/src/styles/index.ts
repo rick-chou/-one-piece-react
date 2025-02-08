@@ -20,11 +20,9 @@ export const HomePreviewHeight = '35vh';
  * UI
  */
 export const NodeStyle = styled.div`
-  width: ${NodeWidth};
-  min-height: ${NodeHeight};
-  border: 1px #d9d9d9 solid;
+  width: ${NodeWidth}px;
+  min-height: ${NodeHeight}px;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
-  border-radius: 6px;
   color: #000;
   box-sizing: border-box;
   text-align: center;
@@ -40,11 +38,9 @@ export const SiderbarNodeWrapperStyle = styled.div<{ $editable: boolean }>`
 `;
 
 export const SiderbarNodeStyle = styled.div`
-  width: 250;
-  min-height: ${NodeHeight / 2};
-  border: 1px #d9d9d9 solid;
+  width: 250px;
+  min-height: ${NodeHeight / 2}px;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
-  border-radius: 6px;
   color: #000;
   box-sizing: border-box;
   text-align: center;

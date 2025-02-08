@@ -1,12 +1,22 @@
-import { ContentWrapper } from '@/theme';
-import { random } from 'lodash';
+import { ContentWrapper } from '@rickzhou/awesome/theme/content-wrapper';
+import { useTheme } from '@rickzhou/react-ui';
+import { random } from 'lodash-es';
+import {
+  BiLogoAngular,
+  BiLogoHtml5,
+  BiLogoNodejs,
+  BiLogoReact,
+  BiLogoTailwindCss,
+  BiLogoTypescript,
+  BiLogoVisualStudio,
+  BiLogoVuejs,
+} from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import { listItemStyle, ulStyle } from './style';
-import { useTheme } from '@/hooks/useTheme';
 
 const Navigation = () => {
   const navigate = useNavigate();
-  const { dark } = useTheme();
+  const { isDark } = useTheme();
 
   return (
     <ContentWrapper>
@@ -14,91 +24,51 @@ const Navigation = () => {
         css={ulStyle}
         onClick={async e => {
           e.preventDefault();
-          const { metaData } = await import('@/router/meta-data');
+          const { metaData } = await import(
+            '@rickzhou/awesome/router/meta-data'
+          );
           const paths = Object.values(metaData).flat();
           const randomPath = paths.at(random(0, paths.length));
           navigate(randomPath!.path);
         }}>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon type="logo" name="react" color={dark ? '#FFF' : '#000'} />
+            <BiLogoReact color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon type="logo" name="vuejs" color={dark ? '#FFF' : '#000'} />
+            <BiLogoVuejs color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              name="angular"
-              type="logo"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoAngular color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="visual-studio"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoHtml5 color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="docker"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoTailwindCss color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="tailwind-css"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoNodejs color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="github"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoTypescript color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
         <li>
           <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="nodejs"
-              color={dark ? '#FFF' : '#000'}
-            />
-          </a>
-        </li>
-        <li>
-          <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="typescript"
-              color={dark ? '#FFF' : '#000'}
-            />
-          </a>
-        </li>
-        <li>
-          <a css={listItemStyle} href="">
-            <box-icon
-              type="logo"
-              name="codepen"
-              color={dark ? '#FFF' : '#000'}
-            />
+            <BiLogoVisualStudio color={isDark() ? '#FFF' : '#000'} />
           </a>
         </li>
       </ul>

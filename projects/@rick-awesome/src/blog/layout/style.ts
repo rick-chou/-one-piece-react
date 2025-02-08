@@ -1,9 +1,7 @@
-import { Bg } from '@/assets/pic';
-import { containerOpacity } from '@/theme';
 import { css, keyframes } from '@emotion/react';
 
 const height = '95vh';
-const width = '65vw'
+const width = '65vw';
 
 const bottomShow = keyframes`
    0% {
@@ -25,17 +23,17 @@ export const containerStyle = css`
   background-color: var(--color-primary-bg);
   min-width: ${width};
   max-width: ${width};
-  // max-height: 900px;
   height: ${height};
   display: flex;
   overflow: hidden;
   width: 100%;
-  // border-radius: 20px;
+  border-radius: 20px;
   font-size: 15px;
   font-weight: 500;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   position: relative;
-  opacity: ${containerOpacity};
+  opacity: calc(var(--content-opacity) / 100);
+  border: 1px solid var(--color-inverse-bg);
 `;
 
 export const sidebarStyle = css`
@@ -170,29 +168,6 @@ export const userNameStyle = css`
   }
 `;
 
-export const notifyStyle = css`
-  position: relative;
-  svg {
-    width: 20px;
-    margin-left: 24px;
-    flex-shrink: 0;
-  }
-`;
-
-export const notificationStyle = css`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ec5252;
-  position: absolute;
-  right: 1px;
-  border: 1px solid var(--color-primary-bg);
-  top: -2px;
-  @media screen and (max-width: 575px) {
-    display: none;
-  }
-`;
-
 export const mainContainerStyle = css`
   padding: 0 30px 30px;
   overflow: auto;
@@ -214,4 +189,5 @@ export const mainHeaderStyle = css`
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 999;
 `;

@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) navigator.serviceWorker.register('/react-editor/dev-sw.js?dev-sw', { scope: '/react-editor/', type: 'classic' })

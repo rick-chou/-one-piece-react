@@ -1,13 +1,13 @@
-/* eslint-disable new-cap */
-import { Hotkey } from '@/config/shortcut';
-import { useModalOpen } from '@/hooks/useModalOpen';
-import { useTheme } from '@/hooks/useTheme';
-import { type ThemeMode } from '@/interface';
-import { BlogRoutes } from '@/router/blog';
-import { metaData, type MetaData } from '@/router/meta-data';
-import { OpenTypeConfig } from '@/store/slice/modalOpenSlice';
+import { Hotkey } from '@rickzhou/awesome/config/shortcut';
+import { useModalOpen } from '@rickzhou/awesome/hooks/useModalOpen';
+import { type ThemeMode } from '@rickzhou/awesome/interface';
+import { BlogRoutes } from '@rickzhou/awesome/router/blog';
+import { metaData, type MetaData } from '@rickzhou/awesome/router/meta-data';
+import { OpenTypeConfig } from '@rickzhou/awesome/store/slice/modalOpenSlice';
+import { fonts } from '@rickzhou/awesome/theme';
+import { useTheme } from '@rickzhou/react-ui';
 import { Modal } from 'antd';
-import { first, last, lowerCase, toLower, uniq, upperCase } from 'lodash';
+import { first, last, lowerCase, toLower, upperCase } from 'lodash-es';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -19,7 +19,6 @@ import {
   CommandModalInputDividerWrapperStyle,
   CommandModalInputStyle,
 } from './style';
-import { fontFamily } from '@/theme';
 
 export type CommandItemTypes = {
   type: string;
@@ -40,7 +39,7 @@ const CmdModal = () => {
   >([]);
   const navigate = useNavigate();
   const [searchVal, setSearchVal] = useState('');
-  const { toggleThemeMode, toggleThemeFontFamily } = useTheme();
+  const { toggleTheme, updateTypography } = useTheme();
 
   useEffect(() => {
     const genCommandItems = () => {
@@ -111,7 +110,7 @@ const CmdModal = () => {
         title: 'font',
       });
 
-      fontFamily.forEach(i => {
+      fonts.forEach(i => {
         commands.push({
           type: 'font',
           mode: 'item',
@@ -186,12 +185,12 @@ const CmdModal = () => {
   const onClick = (item: CommandItemTypes) => {
     switch (item.type) {
       case 'theme': {
-        toggleThemeMode(lowerCase(item.title) as ThemeMode);
+        toggleTheme(lowerCase(item.title) as ThemeMode);
         break;
       }
 
       case 'font': {
-        toggleThemeFontFamily(lowerCase(item.title));
+        updateTypography({ fontFamily: item.title });
         break;
       }
 

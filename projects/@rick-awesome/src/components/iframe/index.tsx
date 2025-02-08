@@ -1,4 +1,4 @@
-import { ContentWrapper } from '@/theme';
+import { ContentWrapper } from '@rickzhou/awesome/theme/content-wrapper';
 import { type FC } from 'react';
 
 type IframeProps = {
@@ -8,7 +8,7 @@ type IframeProps = {
 const Iframe: FC<IframeProps> = ({ path }) => {
   return (
     <ContentWrapper>
-      <div className="rounded-2xl overflow-hidden w-full">
+      <div className="w-full overflow-hidden rounded-2xl">
         <iframe src={path} width={'100%'} height={screen.height * 0.5} />
       </div>
     </ContentWrapper>

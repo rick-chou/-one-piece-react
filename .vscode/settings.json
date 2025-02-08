@@ -4,5 +4,5 @@
     "source.fixAll": "explicit", // Explicitly fix all issues
     "source.fixAll.eslint": "explicit" // Explicitly fix ESLint issues
   },
-  "cSpell.words": ["boxicons", "mscgenjs", "rickzhou"]
+  "cSpell.words": ["mscgenjs", "rickzhou", "Zhou"]
 }

@@ -1,9 +1,9 @@
-import ThemeSwitch from '@/components/theme-switch';
-import { Hotkey } from '@/config/shortcut';
-import { useModalOpen } from '@/hooks/useModalOpen';
-import { OpenTypeConfig } from '@/store/slice/modalOpenSlice';
 import { GithubOutlined } from '@ant-design/icons';
 import { css } from '@emotion/react';
+import { Hotkey } from '@rickzhou/awesome/config/shortcut';
+import { useModalOpen } from '@rickzhou/awesome/hooks/useModalOpen';
+import { OpenTypeConfig } from '@rickzhou/awesome/store/slice/modalOpenSlice';
+import { ThemeSwitch } from '@rickzhou/react-ui';
 import { Divider } from 'antd';
 import {
   headerStyle,
@@ -43,7 +43,7 @@ const Header = () => {
           onClick={() => window.open(import.meta.env.RICK_GITHUB)}
         />
 
-        <ThemeSwitch className="scale-[0.2] !w-4 !h-4 ml-8" />
+        <ThemeSwitch className="ml-8 h-4! w-4! scale-[0.2]" />
       </div>
     </div>
   );

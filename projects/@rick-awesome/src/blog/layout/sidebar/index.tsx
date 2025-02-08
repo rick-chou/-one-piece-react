@@ -1,6 +1,6 @@
-import { metaData } from '@/router/meta-data';
-import { genRandomSvg } from '@/utils';
-import { isEmpty, startCase, upperCase } from 'lodash';
+import { metaData } from '@rickzhou/awesome/router/meta-data';
+import { genRandomSvg } from '@rickzhou/awesome/utils';
+import { isEmpty, startCase, upperCase } from 'lodash-es';
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import {

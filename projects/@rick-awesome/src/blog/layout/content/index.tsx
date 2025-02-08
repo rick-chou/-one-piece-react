@@ -1,4 +1,4 @@
-import { routes } from '@/router';
+import { routes } from '@rickzhou/awesome/router';
 import { useEffect, useRef } from 'react';
 import {
   matchRoutes,

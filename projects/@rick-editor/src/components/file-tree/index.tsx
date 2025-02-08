@@ -1,7 +1,7 @@
 import { Global } from '@emotion/react';
-import { getFileIcon } from '@rickzhou/react-editor/config/icon-theme';
 import { useTabs } from '@rickzhou/react-editor/hooks/useTabs';
 import { useSiderTheme } from '@rickzhou/react-editor/styles';
+import { getFileIcon } from '@rickzhou/react-ui';
 import { Tree } from 'antd';
 import type { DataNode, TreeProps } from 'antd/es/tree';
 import { isEmpty } from 'lodash-es';
@@ -22,7 +22,8 @@ const FileTree: React.FC<FileTreeProps> = () => {
     const dropKey = info.node.key;
     const dragKey = info.dragNode.key;
     const dropPos = info.node.pos.split('-');
-    const dropPosition = info.dropPosition - Number(dropPos[dropPos.length - 1]);
+    const dropPosition =
+      info.dropPosition - Number(dropPos[dropPos.length - 1]);
 
     const loop = (
       data: DataNode[],

@@ -1,4 +1,4 @@
-import { default as prettierConfig } from '@root/prettier.config.js';
+import { default as prettierConfig } from '@root/prettier.config.cjs';
 import { type Config } from 'prettier';
 import pluginsBabel from 'prettier/plugins/babel';
 import pluginEstree from 'prettier/plugins/estree';

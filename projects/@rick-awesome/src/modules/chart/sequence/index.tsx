@@ -1,10 +1,10 @@
-import SequenceChart from '@/blog/components/sequence-chart';
+import SequenceChart from '@rickzhou/awesome/blog/components/sequence-chart';
 import { message } from 'antd';
 import { msc } from './msc';
 
 const Sequence = () => {
   return (
-    <div className="w-100 shadow-md dark:shadow-stone-100 rounded-lg overflow-hidden flex items-end justify-center bg-white py-2">
+    <div className="flex w-full items-end justify-center overflow-hidden rounded-lg bg-white py-2 shadow-md dark:shadow-stone-100">
       <SequenceChart
         msc={msc}
         onClick={async (key: string) => {

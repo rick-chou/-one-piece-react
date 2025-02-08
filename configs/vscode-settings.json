@@ -1,0 +1,74 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.codeLensFontFamily": "Fira Mono for Powerline, Source Code Pro For Powerline, Menlo, Monaco, 'Courier New', monospace",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Fira Code, Source Code Pro, Fira Mono for Powerline, Source Code Pro For Powerline, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "500",
+  "editor.guides.bracketPairs": true,
+  "editor.lineNumbers": "interval",
+  "editor.minimap.autohide": true,
+  "editor.minimap.enabled": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.definitionLinkOpensInPeek": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "icons-carbon",
+  "window.zoomLevel": 4,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "security.workspace.trust.untrustedFiles": "open",
+  "cSpell.userWords": ["ahooks", "dagre", "datasource", "mscgenjs", "xyflow"],
+  "vscode_custom_css.imports": [
+    "file:///Users/rick.zhou/.vscode-insiders/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+  ],
+  "chat.commandCenter.enabled": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

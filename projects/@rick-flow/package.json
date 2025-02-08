@@ -1,19 +1,19 @@
 {
   "name": "@rickzhou/react-flow",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "description": "React Flowchart",
   "homepage": "https://rick-chou.github.io/react-flowchart/",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "badges": "npx istanbul-badges-readme --coverageDir='./coverage'",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.cjs",
     "lint": "eslint src/**/*.{ts,tsx}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc.cjs",
-    "test": "jest",
-    "badges": "npx istanbul-badges-readme --coverageDir='./coverage'"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.5.1",

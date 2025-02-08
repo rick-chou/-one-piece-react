@@ -2,4 +2,3 @@ packages:
   - 'packages/*'
   - '!packages/@rick-test'
   - 'projects/*'
-  - '!projects/@rick-blog-core'

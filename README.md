@@ -36,7 +36,7 @@
 
 ### 2024
 
-- [x] The little one has arrived ! 🍼🐣
+- [x] Our little one has arrived! 🍼🧑‍🍼👩‍🍼
 
 ![bg](https://cdn.jsdelivr.net/gh/rick-chou/rick-assets/jpg/43.jpg)
 

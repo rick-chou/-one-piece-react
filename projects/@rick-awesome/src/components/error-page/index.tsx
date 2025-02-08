@@ -4,7 +4,7 @@ const ErrorPage = () => {
   const error = useRouteError() as Error;
   console.log('error.message', error.stack);
   return (
-    <div className="h-screen flex justify-center items-center bg-white py-6 sm:py-8 lg:py-12">
+    <div className="flex h-screen items-center justify-center bg-white py-6 sm:py-8 lg:py-12">
       <div className="px-4 md:px-8">
         <div className="relative mx-auto flex h-96 w-full items-center justify-center overflow-hidden rounded-2xl bg-gray-100 shadow-lg sm:w-96">
           <img
@@ -24,7 +24,7 @@ const ErrorPage = () => {
             <a
               href={import.meta.env.RICK_ISSUE}
               target="_blank"
-              className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
+              className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 ring-indigo-300 outline-hidden transition duration-100 hover:bg-gray-300 focus-visible:ring-3 active:text-gray-700 md:text-base"
               rel="noreferrer">
               New issue
             </a>
@@ -32,7 +32,7 @@ const ErrorPage = () => {
         </div>
       </div>
 
-      <div className="prose prose-xl max-w-none prose-slate">
+      <div className="prose prose-xl prose-slate max-w-none">
         <pre>
           <code>{error.stack}</code>
         </pre>

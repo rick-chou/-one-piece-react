@@ -1,4 +1,4 @@
-import VueComponentWrapper from '@/components/vue-component';
+import VueComponentWrapper from '@rickzhou/awesome/components/vue-component';
 import Cpn from './index.v2.vue';
 
 const Music = () => {

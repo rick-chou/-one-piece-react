@@ -2,13 +2,11 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 export enum OpenTypeConfig {
-  FlowChartSelectOpen = 'flowchart-select-open',
   MaskOpen = 'mask-open',
   CommandOpen = 'command-open',
 }
 
 const initialState: Record<OpenTypeConfig, boolean> = {
-  [OpenTypeConfig.FlowChartSelectOpen]: false,
   [OpenTypeConfig.MaskOpen]: false,
   [OpenTypeConfig.CommandOpen]: false,
 };

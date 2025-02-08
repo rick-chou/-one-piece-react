@@ -1,8 +1,10 @@
 import * as acorn from 'acorn';
 
-const impCodesanbox = "import Codesandbox from '@/blog/components/codesandbox'";
+const impCodesanbox =
+  "import Codesandbox from '@rickzhou/awesome/blog/components/codesandbox'";
 
-const impCodepen = "import Codepen from '@/blog/components/codepen'";
+const impCodepen =
+  "import Codepen from '@rickzhou/awesome/blog/components/codepen'";
 
 export default function retextSentenceSpacing() {
   return (tree: any, file: any) => {

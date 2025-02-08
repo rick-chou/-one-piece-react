@@ -14,7 +14,10 @@ import HtmlWorker from 'monaco-editor/esm/vs/language/html/html.worker?worker';
 import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 import TsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
 
-import { configureMonacoTailwindcss, tailwindcssData } from 'monaco-tailwindcss';
+import {
+  configureMonacoTailwindcss,
+  tailwindcssData,
+} from 'monaco-tailwindcss';
 
 window.Monaco = monaco;
 
@@ -75,7 +78,11 @@ export const useInit = () => {
     const _tabs = [...tabs];
     _tabs.forEach(i => {
       if (!editor.getModel(Uri.parse(i.path))) {
-        const model = editor.createModel(i.content, undefined, Uri.parse(i.path));
+        const model = editor.createModel(
+          i.content,
+          undefined,
+          Uri.parse(i.path),
+        );
 
         model.onDidChangeContent(() => {
           i.content = model.getValue();
@@ -116,9 +123,15 @@ export const useInit = () => {
     );
 
     Object.keys(types).forEach(path => {
-      const __path__ = path.substring(11);
-      languages.typescript.typescriptDefaults.addExtraLib(types[path], `file://${__path__}`);
-      languages.typescript.javascriptDefaults.addExtraLib(types[path], `file://${__path__}`);
+      const __path__ = path.substring(11); // remove node_module prefix
+      languages.typescript.typescriptDefaults.addExtraLib(
+        types[path],
+        `file://${__path__}`,
+      );
+      languages.typescript.javascriptDefaults.addExtraLib(
+        types[path],
+        `file://${__path__}`,
+      );
     });
   };
 

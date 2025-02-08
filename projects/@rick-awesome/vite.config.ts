@@ -1,4 +1,5 @@
 import mdx from '@mdx-js/rollup';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import vue3 from '@vitejs/plugin-vue';
 import vue2 from '@vitejs/plugin-vue2';
@@ -32,10 +33,10 @@ export default defineConfig(({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            lodash: ['lodash'],
+            lodash: ['lodash-es'],
             echarts: ['echarts'],
             antd: ['antd'],
-            vue: ['vue'],
+            vue: ['vue2', 'vue3'],
             react: ['react'],
             prettier: ['prettier'],
             chance: ['chance'],
@@ -51,6 +52,7 @@ export default defineConfig(({ mode }) => {
           plugins: ['@emotion/babel-plugin'],
         },
       }),
+      tailwindcss(),
       vue2({ compiler: vueCompiler2 as any, include: 'src/**/*.v2.vue' }),
       vue3({ compiler: vueCompiler3, include: 'src/**/*.v3.vue' }),
       visualizer({
@@ -72,6 +74,7 @@ export default defineConfig(({ mode }) => {
         rehypePlugins: [rehypeHighlight, rehypeMdxCodeProps],
       }),
       VitePWA({
+        disable: true,
         injectRegister: 'auto',
         workbox: {
           maximumFileSizeToCacheInBytes: 500 * 1024 * 1024,
@@ -116,10 +119,10 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
-        '@rickzhou/react-ui': path.resolve(
+        '@root': path.resolve(__dirname, '../../'),
+        '@rickzhou/awesome': path.resolve(
           __dirname,
-          '../../packages/@rick-ui',
+          '../../projects/@rick-awesome/src',
         ),
       },
     },

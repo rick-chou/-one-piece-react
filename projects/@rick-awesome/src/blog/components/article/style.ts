@@ -1,4 +1,4 @@
-import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@rickzhou/react-ui';
 import { css } from '@emotion/react';
 
 export const codeBlockStyle = css`
@@ -49,8 +49,8 @@ export const codeFilename = css`
 `;
 
 export const useCodeStyle = () => {
-  const { dark } = useTheme();
-  if (dark) {
+  const { isDark } = useTheme();
+  if (isDark()) {
     return css`
       pre code.hljs {
         display: block;

@@ -13,7 +13,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { name, version } from '../../package.json';
 import modalOpenSlice from './slice/modalOpenSlice';
-import themeSlice from './slice/themeSlice';
 
 export const persistKey = `${name}-${version}`;
 
@@ -29,7 +28,6 @@ const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
     modalOpen: modalOpenSlice,
-    theme: themeSlice,
   }),
 );
 

@@ -1,6 +1,6 @@
 const blogs = import.meta.glob(['../blog/content/*/*.{md,mdx}']);
 
-import Article from '@/blog/components/article';
+import Article from '@rickzhou/awesome/blog/components/article';
 import { type RouteObject } from 'react-router-dom';
 
 export const BlogRoutes: RouteObject = {
@@ -11,7 +11,7 @@ export const BlogRoutes: RouteObject = {
       async lazy() {
         const { default: Component, frontmatter } =
           // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-          (await value()) as typeof import('@/blog/content/README.mdx');
+          (await value()) as typeof import('@rickzhou/awesome/blog/content/README.mdx');
 
         return {
           Component() {

@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
@@ -16,6 +17,7 @@ export default defineConfig(({ mode, command }) => {
           plugins: ['@emotion/babel-plugin'],
         },
       }),
+      tailwindcss(),
       VitePWA({
         disable: true,
         injectRegister: 'auto',
@@ -63,7 +65,10 @@ export default defineConfig(({ mode, command }) => {
     resolve: {
       alias: {
         '@root': path.resolve(__dirname, '../../'),
-        '@rickzhou/react-flow': path.resolve(__dirname, '../../projects/@rick-flow/src'),
+        '@rickzhou/react-flow': path.resolve(
+          __dirname,
+          '../../projects/@rick-flow/src',
+        ),
       },
     },
   };

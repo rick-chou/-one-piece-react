@@ -1,5 +1,5 @@
-import type { OpenTypeConfig } from '@/store/slice/modalOpenSlice';
-import { onOpenChange } from '@/store/slice/modalOpenSlice';
+import type { OpenTypeConfig } from '@rickzhou/awesome/store/slice/modalOpenSlice';
+import { onOpenChange } from '@rickzhou/awesome/store/slice/modalOpenSlice';
 import { useCallback } from 'react';
 import { useRickDispatch, useRickSelector } from './useStore';
 

@@ -12,33 +12,27 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Install pnpm 🧰
+        uses: pnpm/action-setup@v4
+
       - name: Build 📦
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           EMAIL: 944268618@qq.com
           USERNAME: Rick.Zhou
-          REPO: github.com/rick-chou/react-awesome.git
+          REPO: github.com/rick-chou/one-piece-react.git
         run: |
 
           echo node version
           node -v
 
-          echo npm version
-          npm -v
+          echo pnpm version
+          pnpm -v
 
-          echo yarn version
-          yarn -v
-
-          # overrides field not working
-          # use yarn instand
-          # npm install
-          yarn
+          pnpm install
+          pnpm build:blog
 
           cd projects/@rick-awesome
-
-          npm ci
-          npm run build
-
           cd dist
           cp index.html 404.html
 

@@ -1,5 +1,5 @@
-import Article from '@/blog/components/article';
-import Blog from '@/blog/content/README.mdx';
+import Article from '@rickzhou/awesome/blog/components/article';
+import Blog from '@rickzhou/awesome/blog/content/README.mdx';
 import README from '../../../README.md';
 
 const Homepage = () => {

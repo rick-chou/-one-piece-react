@@ -1,16 +1,15 @@
-import { useFlowchart } from '@rickzhou/react-flow/hooks/useFlowchart';
-import { useMenus } from '@rickzhou/react-flow/hooks/useMenus';
-import { useMock } from '@rickzhou/react-flow/hooks/useMock';
-import { useNavigate } from '@rickzhou/react-flow/hooks/useNavigate';
-import { Action } from '@rickzhou/react-flow/interface';
-import { HomePreviewHeight } from '@rickzhou/react-flow/styles';
 import {
   CheckCircleTwoTone,
   ExportOutlined,
   MoreOutlined,
   PlusCircleTwoTone,
 } from '@ant-design/icons';
-import { Empty } from '@rickzhou/react-ui';
+import { useFlowchart } from '@rickzhou/react-flow/hooks/useFlowchart';
+import { useMenus } from '@rickzhou/react-flow/hooks/useMenus';
+import { useMock } from '@rickzhou/react-flow/hooks/useMock';
+import { useNavigate } from '@rickzhou/react-flow/hooks/useNavigate';
+import { Action } from '@rickzhou/react-flow/interface';
+import { HomePreviewHeight } from '@rickzhou/react-flow/styles';
 import {
   Button,
   Card,
@@ -24,8 +23,6 @@ import saveAs from 'file-saver';
 import { useEffect } from 'react';
 import FlowChart from '../flow';
 
-const { WithEmpty } = Empty;
-
 const Preview: React.FC<
   {
     id: string;
@@ -37,11 +34,11 @@ const Preview: React.FC<
   const menu = useMenus(id, onDelete);
   return (
     <Card
-      className=" shadow shadow-blue-200"
+      className="shadow-sm shadow-blue-200"
       title={
         <div className="flex items-center">
           <Popover content={chart?.title}>
-            <div className="mr-4 max-w-[300px] overflow-hidden text-ellipsis cursor-pointer">
+            <div className="mr-4 max-w-[300px] cursor-pointer overflow-hidden text-ellipsis">
               {chart?.title}
             </div>
           </Popover>
@@ -63,9 +60,7 @@ const Preview: React.FC<
         )
       }>
       <div className="h-[35vh]">
-        <WithEmpty data={chart} emptyProps={{ height: HomePreviewHeight }}>
-          <FlowChart id={id} height={HomePreviewHeight} />
-        </WithEmpty>
+        <FlowChart id={id} height={HomePreviewHeight} />
       </div>
     </Card>
   );
@@ -144,7 +139,7 @@ const FlowHome: React.FC<FlowProps> = ({
     <div className="p-8 pr-0">
       <div className="flex items-center justify-between pr-8">
         <div className="flex items-center">
-          <div className="font-bold text-xl mr-8">Flow Chart</div>
+          <div className="mr-8 text-xl font-bold">Flow Chart</div>
         </div>
         <div>{renderBtn()}</div>
       </div>
@@ -153,20 +148,16 @@ const FlowHome: React.FC<FlowProps> = ({
         <Divider />
       </div>
 
-      <WithEmpty
-        data={!loading || selectable}
-        emptyProps={{ loading: !selectable, height: 'calc(100vh - 150px)' }}>
-        <div
-          className={`grid grid-cols-2 gap-x-8 gap-y-12 overflow-scroll pb-6 pr-8 ${
-            selectable ? 'h-[calc(80vh-150px)]' : 'h-[calc(100vh-150px)]'
-          } `}>
-          {Object.keys(flowcharts).map(i => (
-            <div key={i}>
-              <Preview {...props} id={i} onDelete={deleteChart} />
-            </div>
-          ))}
-        </div>
-      </WithEmpty>
+      <div
+        className={`grid grid-cols-2 gap-x-8 gap-y-12 overflow-scroll pr-8 pb-6 ${
+          selectable ? 'h-[calc(80vh-150px)]' : 'h-[calc(100vh-150px)]'
+        } `}>
+        {Object.keys(flowcharts).map(i => (
+          <div key={i}>
+            <Preview {...props} id={i} onDelete={deleteChart} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

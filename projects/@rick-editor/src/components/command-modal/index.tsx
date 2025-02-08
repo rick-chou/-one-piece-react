@@ -6,7 +6,10 @@ import {
   CommandModalInputDividerWrapperStyle,
   CommandModalInputStyle,
 } from '@rickzhou/react-editor/styles';
-import { ActionType, type CommandItemTypes } from '@rickzhou/react-editor/types';
+import {
+  ActionType,
+  type CommandItemTypes,
+} from '@rickzhou/react-editor/types';
 import { List, Modal } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
@@ -46,19 +49,31 @@ const CmdModal: React.FC<CmdModalProps> = ({ onClick }) => {
       mask={false}
       onCancel={toggleCommandModal}>
       <div>
-        <input placeholder="Type a command or search…" css={CommandModalInputStyle} ref={commandInputRef} />
+        <input
+          placeholder="Type a command or search…"
+          css={CommandModalInputStyle}
+          ref={commandInputRef}
+        />
 
         <div css={CommandModalInputDividerWrapperStyle}>
           <hr css={CommandModalInputDividerStyle} />
         </div>
 
         <List>
-          <VirtualList data={genCommandItems()} height={400} itemHeight={36} itemKey="title">
+          <VirtualList
+            data={genCommandItems()}
+            height={400}
+            itemHeight={36}
+            itemKey="title">
             {item => {
               return (
                 <div
                   key={item.title}
-                  css={item.mode === 'title' ? CommandHotkeyTitleStyle : CommandHotkeyItemStyle}
+                  css={
+                    item.mode === 'title'
+                      ? CommandHotkeyTitleStyle
+                      : CommandHotkeyItemStyle
+                  }
                   onClick={() => {
                     onClick(item);
                   }}>
